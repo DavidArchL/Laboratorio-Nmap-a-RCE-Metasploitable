@@ -26,3 +26,12 @@ Metasploitable 2 es una máquina virtual Linux creada por Rapid7 con fines educa
 [!WARNING]
 > ⚠️ Todas las técnicas demostradas en este laboratorio se realizaron en un entorno completamente controlado y aislado, sobre una máquina virtual diseñada específicamente para este propósito. El uso de estas técnicas sobre sistemas sin autorización explícita es ilegal y va en contra de la ética profesional en ciberseguridad. Este documento tiene fines exclusivamente educativos.
 
+# Estructua del Informe
+- [Entorno de Laboratorio](#Entorno-de-Laboratorio)
+- [Fase 1: Reconocimiento de Red](#Fase-1-:-Reconocimiento-de-Red)
+- [Fase 2: Escaneo con Nmap / Zenmap](#Fase-2-:-Escaneo-con-Nmap-/-Zenmap)
+- [Fase 3: Identificación de Vulnerabilidades](#Fase-3-:-Identificación-de-Vulnerabilidades)
+- [Fase 4: Explotación distcc CVE-2004-2687](#Fase-4-:-Explotación-distcc-CVE-2004-2687)
+- [Fase 5: Reverse Shell](#Fase-5-:-Reverse-Shell)
+- [Fase 6: Explotación - vsFTPD 2.3.4 CVE-211](#Fase-6-:-Explotación-vsFTPD-2.3.4-CVE-211)
+- [Conclusiones y lecciones aprendidas](#Conclusiones-y-lecciones-aprendidas)

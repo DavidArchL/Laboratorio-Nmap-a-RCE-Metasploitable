@@ -45,7 +45,5 @@ Metasploitable 2 es una máquina virtual Linux creada por Rapid7 con fines educa
 <img width="805" height="433" alt="image" src="https://github.com/user-attachments/assets/fe24f633-a70d-4b37-a9e1-4d2efeb59bf1" />
 
 Verificación de conectividad:
-
-[]
 > ping -c 3 192.168.179.133
 <img width="1676" height="841" alt="image" src="https://github.com/user-attachments/assets/a7d4b5c3-01ab-4417-978e-20dc9a6ece2b" />

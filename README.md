@@ -35,3 +35,11 @@ Metasploitable 2 es una máquina virtual Linux creada por Rapid7 con fines educa
 - [Fase 5: Reverse Shell](#fase-5-reverse-shell)
 - [Fase 6: Explotación vsFTPD 2.3.4 CVE-211](#fase-6-explotacion-vsftpd-234-cve-211)
 - [Conclusiones y lecciones aprendidas](#conclusiones-y-lecciones-aprendidas)
+
+# Entorno de Laboratorio 
+|Rol|Sistema Operativo|IP|
+|-|-|-|
+|Atacante|Kali Linux|192.168.179.129|
+|Objetivo|Metasploitable 2|192.1681.179.133|
+<img width="1701" height="906" alt="image" src="https://github.com/user-attachments/assets/c71ae853-42f1-4a34-86ce-01874c565e62" />
+<img width="805" height="433" alt="image" src="https://github.com/user-attachments/assets/fe24f633-a70d-4b37-a9e1-4d2efeb59bf1" />

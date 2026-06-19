@@ -65,6 +65,14 @@ Conclusión: El host objetivo 192.168.124.133 está activo y accesible desde nue
 
 # Fase 2: Escaneo con Nmap / Zenmap
 ## 2.1 Detección de sistema operativo
+> nmap -O 192.168.124.133
+
+<img width="1002" height="852" alt="image" src="https://github.com/user-attachments/assets/0bee8360-89e5-4e99-b196-7bbb0b73a867" />
+
+Nmap identificó el objetivo como Linux 2.6.9 – 2.6.33, un kernel antiguo que confirma la naturaleza vulnerable de Metasploitable 2.
+
+## 2.2 Detección de versiones -- top 1000 puertos
+
 # Fase 3: Identificación de Vulnerabilidades
 # Fase 4: Explotación distcc CVE-2004-2687
 # Fase 5: Reverse Shell

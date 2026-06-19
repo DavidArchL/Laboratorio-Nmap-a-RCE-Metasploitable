@@ -12,13 +12,13 @@ Metasploitable 2 es una máquina virtual Linux creada por Rapid7 con fines educa
 - Explotar la vulnerabilidad CVE-2011-2523 en vsFTPd 2.3.4 (backdoor) para conseguir acceso con privilegios de root.
 
 # Herramientas Usadas
-| Herramienta | Propósito |
-| Nmap / Zenmap | Escaneo de puertos, versiones y vulnerabilidades |
-| NSE | Scripts de detección y explotación | 
-| Searchsploit | Búsqueda de exploits en base de datos local |
-| Netcat | Listener para reverse shell | 
-| vsFtpdBackdoor.py | Exploit para CVE-2011-2523 |
-| Python | Upgrade de shell básica a interactiva |
+| Herramienta       | Propósito                                         |
+| Nmap / Zenmap     | Escaneo de puertos, versiones y vulnerabilidades  |
+| NSE               | Scripts de detección y explotación                | 
+| Searchsploit      | Búsqueda de exploits en base de datos local       |
+| Netcat            | Listener para reverse shell                       | 
+| vsFtpdBackdoor.py | Exploit para CVE-2011-2523                        |
+| Python            | Upgrade de shell básica a interactiva             |
 
 # Advertencia ética
 [!WARNING]

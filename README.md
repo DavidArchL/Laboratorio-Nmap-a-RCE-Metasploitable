@@ -47,3 +47,17 @@ Metasploitable 2 es una máquina virtual Linux creada por Rapid7 con fines educa
 Verificación de conectividad:
 > ping -c 3 192.168.179.133
 <img width="1676" height="841" alt="image" src="https://github.com/user-attachments/assets/a7d4b5c3-01ab-4417-978e-20dc9a6ece2b" />
+
+# Fase 1: Reconocimiento de Red
+El reconocimiento activo consiste en enviar paquetes a la red para descubrir qué hosts están activos, sin aún analizar sus servicios. Se usaron dos herramientas complementarias:
+netdiscover trabaja a nivel de capa 2 (ARP), preguntando "¿quién tiene esta IP?" a toda la red. Es muy sigiloso porque usa tráfico que cualquier dispositivo genera normalmente.
+nmap -sn realiza un ping sweep a nivel de capa 3 (ICMP), confirmando qué hosts responden sin escanear puertos.
+Se ejecutará:
+> netdiscover -r 192.168.124.0/24
+nmap -sn 192.168.124.0/24 | grep "Nmap scan report for"
+# Fase 2: Escaneo con Nmap / Zenmap
+# Fase 3: Identificación de Vulnerabilidades
+# Fase 4: Explotación distcc CVE-2004-2687
+# Fase 5: Reverse Shell
+# Fase 6: Explotación vsFTPD 2.3.4 CVE-211
+# Conclusiones y lecciones aprendidas

@@ -45,7 +45,9 @@ Metasploitable 2 es una máquina virtual Linux creada por Rapid7 con fines educa
 <img width="805" height="433" alt="image" src="https://github.com/user-attachments/assets/fe24f633-a70d-4b37-a9e1-4d2efeb59bf1" />
 
 Verificación de conectividad:
-> ping -c 3 192.168.179.133
+```bash
+ping -c 3 192.168.179.133
+```
 <img width="1676" height="841" alt="image" src="https://github.com/user-attachments/assets/a7d4b5c3-01ab-4417-978e-20dc9a6ece2b" />
 
 # Fase 1: Reconocimiento de Red
@@ -56,9 +58,10 @@ netdiscover trabaja a nivel de capa 2 (ARP), preguntando "¿quién tiene esta IP
 nmap -sn realiza un ping sweep a nivel de capa 3 (ICMP), confirmando qué hosts responden sin escanear puertos.
 
 Se ejecutará:
-> netdiscover -r 192.168.124.0/24
-> nmap -sn 192.168.124.0/24 | grep "Nmap scan report for"
-
+```bash
+netdiscover -r 192.168.124.0/24
+nmap -sn 192.168.124.0/24 | grep "Nmap scan report for"
+```
 <img width="1031" height="865" alt="image" src="https://github.com/user-attachments/assets/f204def8-33a8-4f11-96b8-f790564a6596" />
 
 Conclusión: El host objetivo 192.168.124.133 está activo y accesible desde nuestra máquina atacante.
@@ -73,6 +76,25 @@ nmap -O 192.168.124.133
 Nmap identificó el objetivo como Linux 2.6.9 – 2.6.33, un kernel antiguo que confirma la naturaleza vulnerable de Metasploitable 2.
 
 ## 2.2 Detección de versiones -- top 1000 puertos
+```bash
+nmap -sV 192.168.124.133
+```
+
+<img width="987" height="867" alt="image" src="https://github.com/user-attachments/assets/76e50a5e-73e3-4257-9235-cb9d52111b56" />
+
+Se identificaron 23 servicios activos con sus versiones exactas. Versiones destacadas:
+|Puerto|Servicio|Versión|
+|-|-|-|
+|21/tcp|FTP|vsftpd 2.3.4|
+|22/tcp|SSH|OpenSSH 4.7p1|
+|80/tcp|HTTP|Apache 2.2.8|
+|3306/tcp|MySQL|5.0.51a|
+|5432/tcp|PostgreSQL|8.3.0 - 8.3.7|
+
+## 2.3 Escaneo completo -- 65535 puertos
+```bash
+nmap -sV 192.168.124.133 -p-
+```
 
 # Fase 3: Identificación de Vulnerabilidades
 # Fase 4: Explotación distcc CVE-2004-2687

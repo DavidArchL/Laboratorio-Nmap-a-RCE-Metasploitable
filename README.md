@@ -54,10 +54,17 @@ El reconocimiento activo consiste en enviar paquetes a la red para descubrir qu�
 netdiscover trabaja a nivel de capa 2 (ARP), preguntando "¿quién tiene esta IP?" a toda la red. Es muy sigiloso porque usa tráfico que cualquier dispositivo genera normalmente.
 
 nmap -sn realiza un ping sweep a nivel de capa 3 (ICMP), confirmando qué hosts responden sin escanear puertos.
+
 Se ejecutará:
 > netdiscover -r 192.168.124.0/24
 > nmap -sn 192.168.124.0/24 | grep "Nmap scan report for"
+
+<img width="1031" height="865" alt="image" src="https://github.com/user-attachments/assets/f204def8-33a8-4f11-96b8-f790564a6596" />
+
+Conclusión: El host objetivo 192.168.124.133 está activo y accesible desde nuestra máquina atacante.
+
 # Fase 2: Escaneo con Nmap / Zenmap
+## 2.1 Detección de sistema operativo
 # Fase 3: Identificación de Vulnerabilidades
 # Fase 4: Explotación distcc CVE-2004-2687
 # Fase 5: Reverse Shell

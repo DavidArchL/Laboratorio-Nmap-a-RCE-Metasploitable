@@ -39,8 +39,8 @@ Metasploitable 2 es una máquina virtual Linux creada por Rapid7 con fines educa
 # Entorno de Laboratorio 
 |Rol|Sistema Operativo|IP|
 |-|-|-|
-|Atacante|Kali Linux|192.168.179.129|
-|Objetivo|Metasploitable 2|192.168.179.133|
+|Atacante|Kali Linux|192.168.25.143|
+|Objetivo|Metasploitable 2|192.168.25.142|
 <img width="1701" height="906" alt="image" src="https://github.com/user-attachments/assets/c71ae853-42f1-4a34-86ce-01874c565e62" />
 <img width="805" height="433" alt="image" src="https://github.com/user-attachments/assets/fe24f633-a70d-4b37-a9e1-4d2efeb59bf1" />
 
@@ -59,10 +59,10 @@ nmap -sn realiza un ping sweep a nivel de capa 3 (ICMP), confirmando qué hosts 
 
 Se ejecutará:
 ```bash
-netdiscover -r 192.168.124.0/24
-nmap -sn 192.168.124.0/24 | grep "Nmap scan report for"
+netdiscover -r 192.168.25.142/24
+nmap -sn 192.168.25.142/24 | grep "Nmap scan report for"
 ```
-<img width="1031" height="865" alt="image" src="https://github.com/user-attachments/assets/f204def8-33a8-4f11-96b8-f790564a6596" />
+<img width="731" height="567" alt="image" src="https://github.com/user-attachments/assets/893857d1-1c68-40cc-b53c-ea2d7b697b0e" />
 
 Conclusión: El host objetivo 192.168.124.133 está activo y accesible desde nuestra máquina atacante.
 
@@ -71,7 +71,7 @@ Conclusión: El host objetivo 192.168.124.133 está activo y accesible desde nue
 ```bash
 nmap -O 192.168.124.133
 ```
-<img width="1002" height="852" alt="image" src="https://github.com/user-attachments/assets/0bee8360-89e5-4e99-b196-7bbb0b73a867" />
+<img width="698" height="708" alt="image" src="https://github.com/user-attachments/assets/ef3de4ef-0f37-4179-ba30-087f16ae0d0e" />
 
 Nmap identificó el objetivo como Linux 2.6.9 – 2.6.33, un kernel antiguo que confirma la naturaleza vulnerable de Metasploitable 2.
 
@@ -95,7 +95,12 @@ Se identificaron 23 servicios activos con sus versiones exactas. Versiones desta
 ```bash
 nmap -sV 192.168.124.133 -p-
 ```
+<img width="929" height="696" alt="image" src="https://github.com/user-attachments/assets/ae326753-6dbe-4b5c-aadf-a1ef46078162" />
 
+El escaneo completo reveló 6 puertos adicionales no presentes en el top 1000, siendo el más relevante:
+|Puerto|Servicio|Versión|
+|-|-|-|
+|3632/tcp|distccd|distcc v1 (GNU) 4.2.4|
 # Fase 3: Identificación de Vulnerabilidades
 # Fase 4: Explotación distcc CVE-2004-2687
 # Fase 5: Reverse Shell

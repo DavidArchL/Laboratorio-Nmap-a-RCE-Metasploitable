@@ -101,6 +101,7 @@ El escaneo completo reveló 6 puertos adicionales no presentes en el top 1000, s
 |Puerto|Servicio|Versión|
 |-|-|-|
 |3632/tcp|distccd|distcc v1 (GNU) 4.2.4|
+
 ⚠️ El puerto 3632 (distcc) no aparece en el escaneo por defecto de Nmap. Solo es visible con -p-. Este servicio será el vector de ataque principal en la Fase 4.
 
 ## 2.4 Escaneo de puertos específicos y exportación de resultados
@@ -127,7 +128,7 @@ nmap -T4 -A -v 192.168.25.142
 El flag *-A* combina cuatro técnicas en un solo comando:
 
 |Flag|Función|
-|-|-|-|
+|-|-|
 |-O|Detección de sistema operativo|
 |-sV|Detección de versión de servicios|
 |-sC|Ejecución de scripts NSE por defecto|

